@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="Proyecto 4/index.css" />
+    <title>Simple To Do List</title>
+  </head>
+  <body>
+
+<!----------------------------------------------------------------------------->
+    <header class="heading">
+      <!--Contenedor para el botón que elimina el local Storage-->
+      <div class="divDelete">
+        <button class="deleteLocalStorage" id="deleteLocalStorage">
+          Clear Local Storage
+        </button>
+      </div>
+
+      <!--Contenedor del titulo del proyecto-->
+      <div class="divTitle">
+        <h1 class="title">Simple to do list</h1>
+      </div>
+
+      <!--Contendor para el menú interactivo-->
+      <div class="divMenuInteractivo" id="buttonMenu">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="16"
+          height="16"
+          fill="currentColor"
+          class="openNav"
+          viewBox="0 0 16 16"
+          id="openNav"
+        >
+          <path
+            fill-rule="evenodd"
+            d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5"
+          />
+        </svg>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="16"
+          height="16"
+          fill="currentColor"
+          class="closeNav hidden-2"
+          viewBox="0 0 16 16"
+          id="closeNav"
+        >
+          <path
+            d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8z"
+          />
+        </svg>
+      </div>
+    </header>
+<!----------------------------------------------------------------------------->
+
+
+
+<!----------------------------------------------------------------------------->    
+    <div class="menuContainer hidden" id="menu">
+      
+      <div class="apartado">Tutorial</div>
+      <div class="apartado">Creator</div>
+      <div class="apartado">More Information</div>
+      <div class="apartado">Other Proyects</div>
+    </div>
+<!----------------------------------------------------------------------------->
+
+
+
+<!----------------------------------------------------------------------------->
+    <main class="Principal-content">
+      <div class="taskSetting">
+        <input type="text" class="writeTask" id="writeTask" />
+        <button class="getTask" id="getTask">
+          <p class="textgetTask">Create Task</p>
+        </button>
+      </div>
+
+      <div class="tasksContainer" id="tasksContainerDiv">
+        <ul class="tasks" id="tasksContainer"></ul>
+      </div>
+    </main>
+
+    <script src="Proyecto 4/index.js"></script>
+  </body>
+</html>
