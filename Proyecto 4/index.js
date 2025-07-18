@@ -16,6 +16,9 @@ const input = document.getElementById("writeTask");
 //Contenedor de las tareas
 const contenedor = document.getElementById("main");
 
+const fecha = new Date();
+
+ 
 //FUCNIONES
 
 //Funcion de buena pratica para agregar elementos al local Storage (Reducir codigo, más legible, etc)
@@ -123,20 +126,36 @@ function editarTarea(e){
     inputEdicion.value = "";
 
 }
-// function tachar(e){
-//      const localVariables = obtenerDeLocal();
-//      const liID = e.target.parentElement.parentElement.parentElement.parentElement.id;
-//      const li = document.getElementById(liID);
-//      localVariables.forEach((tarea) =>{
-//         if(tarea.id === li.id){
-//             li.desing = !li.desing;
-//         }
-//      })
-//      tareas = localVariables;
-//      agregarAlLocal();
-//      ul.innerHTML = ""
-//      tareas.forEach(agregarAlHTML);
-// }
+function mostrarFecha(e){
+     
+    const liID = e.target.parentElement.parentElement.parentElement.parentElement.id
+    const li = document.getElementById(liID);
+    const grupoVaribles = obtenerDeLocal();
+
+    //Accediendo al normal Space
+
+    const NormalSpace = li.querySelector(".normalSpace");
+
+        //Creacion del contenedor donde va a recidir la información sobre la creación de la tarea
+        const contenedorFecha = document.createElement("div");
+        contenedorFecha.className = "mostrarFecha";
+
+        if(e.target.classList.contains("task")){
+
+            grupoVaribles.forEach((tarea)  => {
+                if(tarea.id === liID){
+
+                    contenedorFecha.textContent = "Fecha de creación: " + (tarea.fechaCreacion);
+
+                }
+               
+            })
+            
+        }  
+        li.append(contenedorFecha);
+        NormalSpace.style.filter = "blur(2px)"
+    
+}
 
 //EVENTOS
 
@@ -155,7 +174,8 @@ document.addEventListener("click", (e)=>{
             tarea: input.value,
             id: crypto.randomUUID(),
             done: false,
-            desing: false
+            desing: false,
+            fechaCreacion: fecha.toLocaleString("es-Es")
            }
 
            tareas = [...tareas, LaTarea];
@@ -205,9 +225,15 @@ document.addEventListener("click", (e)=>{
     }
     //Borrar todas las tareas
     if(e.target.classList.contains("deleteLocalStorage")){
+        
         localStorage.clear();
-        ul.innerHTML = "";
+        window.location.reload();
+       
     }
+
+    // if(e.target.classList.contains("task")){
+    //     mostrarFecha(e);
+    // }
 
 })
 
@@ -226,5 +252,35 @@ document.addEventListener("keydown", (e) => {
         editButton.click();
     }
 });
+
+contenedor.addEventListener("mouseover", (e)=>{
+    
+    if(e.target.classList.contains("task")){
+       mostrarFecha(e);
+    }
+})
+contenedor.addEventListener("mouseout", (e)=>{
+    
+    if(e.target.classList.contains("task")){
+       const liID = e.target.parentElement.parentElement.parentElement.parentElement.id;
+       const li = document.getElementById(liID);
+       const normalSpace = li.querySelector(".normalSpace");
+       const yaExiste = li.querySelector(".mostrarFecha");
+
+       if(yaExiste){
+        yaExiste.remove();
+       }
+
+        normalSpace.style.filter = "blur(0px)"
+
+    }
+})
+
+
+    
+
 //-------------------------------------------------------------------------------------------
+
+//Para mañana, ponerle fecha de creación a las tareas y que aparezcan al hacer hover en la misma tarea.
+//Ir pensando en los proximos proyextos y proximos aprendizajes
 

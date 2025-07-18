@@ -238,6 +238,26 @@ body{
     height: 123px;
 }
 
+.mostrarFecha{
+
+    width: 20%;
+    height: 40px;
+    background-color: black;
+    border: 2px solid white;
+    border-radius: 10px;
+    color: white;
+    font-weight: 900;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: -50px;
+    left: 5px;
+    z-index: 2;
+}
+.task:hover{
+    color:rgb(255, 149, 0);
+}
 /*Menu*/
 .menuContainer{
 
