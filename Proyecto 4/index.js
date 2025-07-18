@@ -165,7 +165,7 @@ document.addEventListener("click", (e)=>{
     //Evento para agregar las tareas al HTML y al local Storage.
     if(e.target.classList.contains("getTask")){
 
-        if(input.value===""){
+        if(input.value.trim() === ""){
             alert("Debes escribir algo");
             return;
         }else{
