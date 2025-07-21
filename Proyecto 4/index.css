@@ -85,6 +85,7 @@ body{
     color: white;
     display: flex;
     justify-self: center;
+    align-items: center;
     flex-direction: column;
     padding: 20px;
 }
@@ -240,8 +241,8 @@ body{
 
 .mostrarFecha{
 
-    width: 20%;
-    height: 40px;
+    width: 25%;
+    height: 50px;
     background-color: black;
     border: 2px solid white;
     border-radius: 10px;
@@ -289,6 +290,7 @@ body{
 }
 .hidden-2{
     display: none;
+    background-color: black;
 }
 
 
@@ -333,4 +335,37 @@ body{
 .completed{
     text-decoration: line-through;
     color: gray;
+}
+.tutorialContainer{
+    width: 80%;
+    height: 50vh;
+    border: 2px solid black;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: justify;
+    word-spacing: 2px;
+    font-size: 1.1rem;
+    padding: 10px;
+}
+.negro{
+    color:rgb(255, 149, 0);
+    font-weight: 900;
+
+}
+.hidden3{
+    display: none;
+}
+svg{
+
+    color: white;
+    width: 30px;
+    height: 30px;
+
+}
+svg:hover{
+    cursor: pointer;
+    color:rgb(255, 149, 0);
+
 }

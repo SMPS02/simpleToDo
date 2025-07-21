@@ -16,7 +16,14 @@ const input = document.getElementById("writeTask");
 //Contenedor de las tareas
 const contenedor = document.getElementById("main");
 
+//Variable para la fecha de la tarea
 const fecha = new Date();
+
+//Variables para esconder el tutorial
+const tutorial = document.getElementById("tutorial");
+const open = document.getElementById("open");
+const close = document.getElementById("close");
+
 
  
 //FUCNIONES
@@ -217,7 +224,6 @@ document.addEventListener("click", (e)=>{
     if(e.target.classList.contains("editTask")){
         mostrarEdicion(e);
     }
-
     //Editar tarea
     if(e.target.classList.contains("gettingtaskEdited")){
 
@@ -225,16 +231,30 @@ document.addEventListener("click", (e)=>{
     }
     //Borrar todas las tareas
     if(e.target.classList.contains("deleteLocalStorage")){
-        
-        localStorage.clear();
+        let asegurar = prompt("¿Deseas eliminar todas las tareas?. Las tareas borradas no podrán recuperarse. (si/no)" )
+        asegurar.toLocaleLowerCase();
+
+        if(asegurar === "si" ){
+            localStorage.clear();
         window.location.reload();
+        }else if(asegurar === "no"){
+            return;
+        }else{
+            alert("Respuesta invalida");
+            asegurar = prompt("¿Deseas eliminar todas las tareas?. Las tareas eliminadas no podrán recuperarse. (si/no)" )
+            asegurar.toLocaleLowerCase();   
+        }
+        
        
     }
 
-    // if(e.target.classList.contains("task")){
-    //     mostrarFecha(e);
-    // }
+    //Evento para abrir y cerrar el tutorial 
+    if(e.target.id === "open" || e.target.id === "close"){
 
+        tutorial.classList.toggle("hidden3");
+        open.classList.toggle("hidden3");
+        close.classList.toggle("hidden3");
+    }
 })
 
 window.addEventListener("DOMContentLoaded", (e)=>{
@@ -275,6 +295,8 @@ contenedor.addEventListener("mouseout", (e)=>{
 
     }
 })
+
+
 
 
     

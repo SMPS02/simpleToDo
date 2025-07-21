@@ -7,8 +7,7 @@
     <title>Simple To Do List</title>
   </head>
   <body>
-
-<!----------------------------------------------------------------------------->
+    <!----------------------------------------------------------------------------->
     <header class="heading">
       <!--Contenedor para el botón que elimina el local Storage-->
       <div class="divDelete">
@@ -53,39 +52,93 @@
         </svg>
       </div>
     </header>
-<!----------------------------------------------------------------------------->
+    <!----------------------------------------------------------------------------->
 
-
-
-<!----------------------------------------------------------------------------->    
+    <!----------------------------------------------------------------------------->
     <div class="menuContainer hidden" id="menu">
-      
       <div class="apartado">Tutorial</div>
       <div class="apartado">Creator</div>
       <div class="apartado">More Information</div>
       <div class="apartado">Other Proyects</div>
     </div>
+    <!----------------------------------------------------------------------------->
 
-
-<!----------------------------------------------------------------------------->
+    <!----------------------------------------------------------------------------->
     <main class="Principal-content" id="main">
+      <!----------------------------------------------------------------------------->
+      <!----------------------------------------------------------------------------->
+      <div class="abrirCerrar">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="16"
+          height="16"
+          fill="currentColor"
+          class="bi bi-door-open-fill"
+          viewBox="0 0 16 16"
+          id="open"
+        >
+          <path
+            d="M1.5 15a.5.5 0 0 0 0 1h13a.5.5 0 0 0 0-1H13V2.5A1.5 1.5 0 0 0 11.5 1H11V.5a.5.5 0 0 0-.57-.495l-7 1A.5.5 0 0 0 3 1.5V15zM11 2h.5a.5.5 0 0 1 .5.5V15h-1zm-2.5 8c-.276 0-.5-.448-.5-1s.224-1 .5-1 .5.448.5 1-.224 1-.5 1"
+          />
+        </svg>
+
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="16"
+          height="16"
+          fill="currentColor"
+          class="bi bi-x-circle hidden3"
+          viewBox="0 0 16 16"
+          id="close"
+        >
+          <path
+            d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"
+          />
+          <path
+            d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708"
+          />
+        </svg>
+      </div>
+      <div class="tutorialContainer hidden3" id="tutorial">
+        <p class="explicacionSimple">
+          Este es un generador de tareas simples el cual sirve para almacenar
+          las tareas que tengas pendientes. Escriba la tarea en el cuadro de
+          texto y para guardarla presionas la tecla "enter" o haga click en el
+          botón de "agregar tarea". La tarea creada, se almacenará en este
+          pagina, incluso si reinicia la <br />
+          pagina, se sale de ella o la elimina. La tarea creada tendrá 3 botones
+          que se explicarán a continuación: <br />
+          <br />
+          <span class="negro">Done/Not Done:</span> Aquí podrá especificar si la
+          tarea está hecha o no (La tarea viene no hecha por defecto). <br />
+          <br />
+          <span class="negro">Edit:</span> Este botón sirve para editar la
+          tarea. El proceso es igual que para crearla, pero en este caso el
+          texto que ingrese en el cuadrado texto de edición reemplazará al texto
+          ya ingresado. <br />
+          <br />
+          <span class="negro">Delete:</span> Este botón sirve para elminar la
+          tarea. <br />
+          <br />
+          NOTA: Si coloca el ratón sobre el texto de se mostrará la fecha de la
+          creación de la tarea
+        </p>
+      </div>
+      <!----------------------------------------------------------------------------->
+      <!----------------------------------------------------------------------------->
       <div class="taskSetting" id="taskSetting">
         <input type="text" class="writeTask" id="writeTask" />
-        <button class="getTask" id="getTask">
-          Agregar Tarea
-        </button>
+        <button class="getTask" id="getTask">Agregar Tarea</button>
       </div>
-
+      <!----------------------------------------------------------------------------->
+      <!----------------------------------------------------------------------------->
       <div class="tasksContainer" id="tasksContainerDiv">
-        <ul class="tasks" id="tasksContainer">
-          
-
-        </ul>
-
-       
+        <ul class="tasks" id="tasksContainer"></ul>
       </div>
+      <!----------------------------------------------------------------------------->
+      <!----------------------------------------------------------------------------->
     </main>
-
+    <!----------------------------------------------------------------------------->
     <script src="Proyecto 4/index.js"></script>
   </body>
 </html>
